@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casio</title>
+</head>
+<body>
+<h1>CACULATOR</h1>
+<form action="#" method="get">
+    <input type="number" id="a">
+    <input type="number" id="b"><br><br>
+    <button onclick="addition();">addition(+)</button>
+    <button onclick="Subtraction()">Subtraction(-)</button>
+    <button onclick="Multiplication()">Multiplication(x)</button>
+    <button onclick="Division()">Division(/)</button>
+</form>
+</body>
+<script>
+    function addition(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        alert("Kết quả là: " + (a+b));
+    }
+    function Subtraction(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        alert("Kết quả là: " + (a-b));
+    }
+    function Multiplication(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        alert("Kết quả là: " + (a*b));
+    }
+    function Division(){
+        let a= +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        alert("Kết quả là: " + (a/b));
+    }
+</script>
+</html>
