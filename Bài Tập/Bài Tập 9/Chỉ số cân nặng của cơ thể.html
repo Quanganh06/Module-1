@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số cân nặng</title>
+</head>
+<body>
+<script>
+    let Height = prompt("Nhập chiều cao");
+    let Weight = prompt(" Nhập cân nặng ");
+    BMI = Weight / (Height ^ 2);
+    if (BMI < 18)
+        document.write("Thiếu cân");
+    else if (BMI < 25.0)
+        document.write("Bình Thường");
+    else if (BMI < 30.0)
+        document.write("Thừa cân");
+    else
+        document.write("Béo Phì");
+</script>
+</body>
+</html>

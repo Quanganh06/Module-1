@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh switch case</title>
+</head>
+<body>
+<form>
+    <input type="text" id="month" name="month">
+
+    <button type="button" name="Tinh" id="tinh" onclick="checkId()">Tính số ngày</button>
+
+    <h3 id="ngay"></h3>
+</form>
+<script>
+    function id() {
+        let month = +document.getElementById("ngay").value;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("ngay").innerText = "Tháng có 30 ngày.";
+                break;
+            case 2:
+                document.getElementById("ngay").innerText = "Tháng có 28 hoặc 29 ngày.";
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("ngay").innerText = "Tháng có 31 ngày.";
+            default:
+                document.getElementById("ngay").innerText = "Yêu cầu nhập lại";
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>
