@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacy</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let fn;
+    let sum = 1;
+    document.writeln('0, 1, ');
+    for (let i = 3; i <= 20; i++) {
+        fn = b + a;
+        document.writeln(fn + ',');
+        sum += fn;
+        b = a;
+        a = fn;
+    }
+    document.write("tổng của 20 số đầu là " +sum)
+</script>
+</body>
+</html>

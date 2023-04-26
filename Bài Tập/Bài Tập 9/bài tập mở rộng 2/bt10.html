@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Giá Điện</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập vào số điện cũ");
+    let b = +prompt("Nhập vào số điện mới");
+    let c = b - a;
+    if (c <= 50) {
+        T = c * 3000;
+        alert("IN ra số tiền phải trả là " + T)
+    } else if (50 < c < 100) {
+        tb = T + c * 2500;
+        alert("IN ra số tiền phải trả " + tb)
+    } else {
+        TT = T + tb + c * 2800;
+        alert("IN ra số tiền phải trả" + TT)
+    }
+
+
+</script>
+</body>
+</html>
