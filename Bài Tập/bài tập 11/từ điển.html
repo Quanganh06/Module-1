@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h1>Từ Điển Anh Việt</h1>
+<label for=>Nhập Từ Cần Tìm : <br></label>
+<input type="nhap"value=" "name="Nhậptu"size="30" placeholder="Nhập từ">
+<button onclick="search()">Tìm kiếm</button>
+<script>
+    let english = ["dog","cat","fish","pig"];
+    let vietnamese = ["chó","mèo","cá","heo"];
+    function eng(){
+
+        document.getElementById("eng").value;
+        for (let i = 0; i < english.length ; i++)
+        {
+            if(english[i] = eng){
+                alert(vietnamese[i]);
+            }else{
+                alert("ko có từ đó");
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
