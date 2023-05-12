@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt 3</title>
+</head>
+<body>
+<script>
+  let N= [2,4,7,13,18,32,45,75];
+  let max = N[0], sum = 0;
+  for (let i = 0; i < N.length; i++) {
+    if (N[i] > max) {
+      max = N[i];
+    }
+    sum = sum + N[i];
+  }
+  let giaTriTB = sum / N.length;
+  alert("Gia tri max: " + max + "\nGia tri Tb : " + giaTriTB);
+</script>
+</body>
+</html>
