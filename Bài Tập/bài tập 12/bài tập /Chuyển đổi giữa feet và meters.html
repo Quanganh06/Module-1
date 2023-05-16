@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<h3><label>Feet</label></h3>
+<input id="nhapso" placeholder="Yeu cau nhap so: ">
+<button onclick="footToMeter()"></button>
+<p id="resultFoot">Kết quả: </p>
+<h3><label>Meter</label></h3>
+<input id="Meter" placeholder="Yeu cau nhap so: ">
+<button onclick="meterToFoot()"></button>
+<p id="resultMeet">Kết quả: </p>
+<script>
+    function footToMeter(foot) {
+        foot = document.getElementById('inputFeet').value;
+        let meet = 0.305 * foot;
+        document.getElementById('resultFeet').innerText = meet;
+    }
+    function meterToFoot(meter) {
+        meet = document.getElementById('inputMeet').value;
+        let foot = 3.279 * meet;
+        document.getElementById('resultMeet').innerText = foot;
+    }
+</script>
+</body>
+
+</html>

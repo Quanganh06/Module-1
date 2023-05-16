@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Nhập vào số a: ");
+  let b = +prompt("Nhập vào số b: ");
+  let c = +prompt("Nhập vào số c: ");
+
+  function Kiemtra(num1, num2, num3) {
+    if (num1 > num2 && num1 > num3) {
+      document.write("Số lớn nhất là " + num1);
+    } else if (num2 > num1 && num2 > num3) {
+      document.write("Số lớn nhất là " + num2);
+    } else if (num3 > num1 && num3 > num2) {
+      document.write("Số lớn nhất là " + num3);
+    } else {
+      document.write("Các số bằng nhau");
+    }
+  }
+
+  Kiemtra(a, b, c);
+</script>
+</body>
+</html>
