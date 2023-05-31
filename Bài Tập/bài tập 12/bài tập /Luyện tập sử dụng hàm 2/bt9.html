@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt9</title>
+</head>
+<body>
+<script>
+  function countChar(stringArray, char) {
+    let count = 0;
+    for (let i = 0; i < stringArray.length; i++) {
+      if (stringArray[i] === char) {
+        count++;
+      }
+    }
+    return count > 0 ? count : -1;
+  }
+  let myArray = +prompt("nhap vao day so")
+  let myChar = +prompt("so can tim:");
+  let count = countChar(myArray, myChar);
+  document.write(count);
+
+</script>
+</body>
+</html>

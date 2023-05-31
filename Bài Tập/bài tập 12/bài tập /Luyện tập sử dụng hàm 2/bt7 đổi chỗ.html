@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bt7</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Nhap vao so thu nhat ");
+  let b = +prompt("Nhap vao so thu hai ");
+
+  function Doicho() {
+    let temp = a;
+    a = b;
+    b = temp;
+  }
+  Doicho();
+  alert("So da doi cho : " + a +","+ b);
+</script>
+</body>
+</html>

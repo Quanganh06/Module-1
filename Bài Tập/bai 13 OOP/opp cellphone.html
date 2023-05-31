@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phone</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Nam</th>
+        <th>Duong</th>
+    </tr>
+</table>
+<script>
+  class Mobile{
+    constructor(brand,batter,inbox,sent,power,drafts) {
+      this.batter=100;
+      this.brand="iPhone";
+      this.drafys="";
+      this.inbox=[];
+      this.sent=[]
+      this.power=true;
+    }
+    turnonPhone() {
+        alert("điện thoại đã bật !");
+        this.power = true;
+    }
+    turnoffPhone() {
+        alert("điện thoại đã tắt!");
+        this.power = false;
+    }
+      phoneCharger() {
+          this.batter = 100;
+          alert("Pin day!");
+      }
+      draftMessger() {
+          this.drafys = prompt("Nhap tin nha: ");
+          let confirMessger = confirm("ban co muon gui tin nhan ko ?");
+          if (confirMessger) {
+              let phonePerson = +prompt("nhap so dien thoai nguoi nhan: ");
+          }
+
+</script>
+</body>
+</html>

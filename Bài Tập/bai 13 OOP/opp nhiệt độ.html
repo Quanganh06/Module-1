@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhiệt độ</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    constructor(celsius) {
+      if(celsius<-273) {
+        this.celsius = 0;
+      }else{
+        this.celsius = celsius;
+      }
+    }
+      getConverttoF(){
+      return this.celsius*1.8+32;
+}
+   getConverttoK(){
+      return this.celsius+273.15;
+   }
+  }
+  let result=new Temperature(25);
+  console.log("do F: "+result.getConverttoF());
+  console.log("do K: "+result.getConverttoK());
+</script>
+</body>
+</html>

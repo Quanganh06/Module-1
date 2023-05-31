@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt7</title>
+</head>
+<body>
+<script>
+let a = parseInt(prompt("Nhập số nguyên a:"));
+let b = parseInt(prompt("Nhập số nguyên b:"));
+
+function swapNumbers(x, y) {
+[x, y] = [y, x];
+return [x, y];
+}
+
+console.log(`Trước khi đổi chỗ: a = ${a}, b = ${b}`);
+
+[a, b] = swapNumbers(a, b);
+
+console.log(`Sau khi đổi chỗ: a = ${a}, b = ${b}`);
+</script>
+</body>
+</html>
