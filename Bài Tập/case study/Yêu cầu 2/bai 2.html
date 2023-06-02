@@ -6,12 +6,18 @@
 </head>
 <body>
 <script>
-  let n = +prompt("Nhập số dòng bạn muốn tạo hình: ")
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j <= i; j++) {
-      document.write(" * ");
+    let n = +prompt("Số dòng cần in hình tam giác:");
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= n - i; j++) {
+            document.write("&nbsp;&nbsp;");
+        }
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
     }
-  }
+
+
 </script>
 </body>
 </html>

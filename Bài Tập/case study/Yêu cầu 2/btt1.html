@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt1</title>
+</head>
+<body>
+<script>
+  function drawTriangle(h) {
+    let output = " ";
+    for (let i = 1; i <= h; i++) {
+      for (let j = 1; j <= h - i; j++) {
+        output += " ";
+      }
+
+      for (let k = 1; k <= (i === 1 || i === h ? i : 1); k++) {
+        output += "*";
+      }
+
+      output += "\n";
+    }
+
+    document.write(output);
+  }
+
+  drawTriangle(5);
+
+</script>
+</body>
+</html>

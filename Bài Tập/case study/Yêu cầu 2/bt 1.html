@@ -6,16 +6,18 @@
 </head>
 <body>
 <script>
-  let h=+prompt("nhap vao chieu cao cua tam giac:")
-  for(var i =1;i<=h;i++);
-  {
-    for(var j=1;j<=1;j++);
-    if( j==1|| j==i || i==h);
-    document.write(" *  ") ;
-    else{
-      document.write(" ");
+    let h = +prompt("nhap chieu cao cua hinh: ")
+    for (let i = 1; i <= h; i++) {
+        for (let j = 1; j <= i; j++) {
+            if (i == 1 || i == h || j == 1 || j == i) {
+                document.write('*')
+            } else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br>');
+
     }
-  }
 </script>
 </body>
 </html>
