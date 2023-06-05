@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var menu = [
+        {name: 'nước cam', coin: 15000},
+        {name: 'nước chanh', coin: 15000},
+        {name: 'cafe', coin: 17000},
+        {name: 'nước ép cà rốt', coin: 18000},
+        {name: 'nước lọc', coin: 10000},
+        {name: 'nước dừa', coin: 20000},
+        {name: 'ko muốn gọi món ', coin: 0},
+    ];
+
+    for (let i = 0; i < menu.length; i++) {
+        document.write((i+1) +"." + menu[i].name + " - " + menu[i].coin + " VND<br>");
+    }
+
+    let chon = prompt("Hãy chọn một thức uống theo số thứ tự:");
+
+    if (chon >= 1 && chon <= menu.length) {
+        document.write("Bạn đã chọn " + menu[chon-1].name + " - " + menu[chon-1].coin + " VND.");
+    } else {
+        document.write("Lựa chọn của bạn không hợp lệ! Hãy chọn lại.");
+    }
+
+
+</script>
+</body>
+</html>

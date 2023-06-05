@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+      let Chuthuong="LE quang ANH";
+      function vietHoa(stt){
+        let arr= stt.toLowerCase().split(" ");
+        for (let i=0;i<arr.length;i++){
+          arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].slice(1);
+        }
+        return arr.join(" ");
+      }
+      document.write(vietHoa(Chuthuong));
+</script>
+  </body>
+</html>

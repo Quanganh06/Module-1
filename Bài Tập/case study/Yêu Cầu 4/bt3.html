@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function commonCharacter(str1, str2) {
+    let kitu = "";
+    for (let i = 0; i < str1.length; i++) {
+      let char1 = str1.charAt(i);
+      for (let j = 0; j < str2.length; j++) {
+        let char2 = str2.charAt(j);
+        if (char1 === char2 && !kitu.includes(char1)) {
+          kitu += char1;
+        }
+      }
+    }
+    return kitu;
+  }
+
+  let chuoi1 = "adcgf";
+  let chuoi2 = "abcdc";
+  let kytuchung = commonCharacter(chuoi1, chuoi2);
+  document.write(kytuchung);
+
+</script>
+</body>
+</html>
