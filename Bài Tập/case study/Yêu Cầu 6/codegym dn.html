@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>Them hoc vien moi</button>
+<button>Sua thong tin hoc vien</button>
+<button>xoa hoc vien </button>
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <th>ma hoc vien</th>
+        <th>ten</th>
+        <th>lop</th>
+        <th>email</th>
+        <th>ngay sinh</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <script>
+        class Hocvien{
+            constructor(id, ten, lop, email, ngaysinh) {
+                this.id = id;
+                this.ten = ten;
+                this.lop = lop;
+                this.email = email;
+                this.ngaysinh = ngaysinh;
+            }
+            getId() {
+                return this.id;
+            }
+            getTen() {
+                return this.ten;
+            }
+            getLop() {
+                return this.lop;
+            }
+            getEmail() {
+                return this.email;
+            }
+            getNgaysinh() {
+                return this.ngaysinh;
+            }
+            setId(value) {
+                this.id = value;
+            }
+            setTen(value) {
+                this.ten = value;
+            }
+            setLop(value) {
+                this.lop = value;
+            }
+            setEmail(value) {
+                this.email = value;
+            }
+            setNgaysinh(value) {
+                this.ngaysinh = value;
+            }
+        }
+
+        let HocvienList = [];
+        let Hocvien1 = new Hocvien(1, "Le Tri", "Lop ABC", "letri@example.com", "01/01/2000");
+        HocvienList.push(Hocvien1);
+        display(HocvienList);
+
+        function add() {
+            let id = document.getElementById("id").value;
+            let ten = document.getElementById("ten").value;
+            let lop = document.getElementById("lop").value;
+            let email = document.getElementById("email").value;
+            let ngaysinh = document.getElementById("ngaysinh").value;
+            let hocvien = new Hocvien(id, ten, lop, email, ngaysinh);
+            HocvienList.push(hocvien);
+            display(HocvienList);
+        }
+
+        function display(list) {
+            let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+                '    <tr>\n'+
+                '        <th>ID</th>\n' +
+                '        <th>Ten</th>\n' +
+                '        <th>Lop</th>\n' +
+                '        <th>email</th>\n' +
+                '        <th>Ngaysinh</th>\n' +
+                '    </tr>';
+
+            for (let i = 0; i < list.length; i++) {
+                tableString += '<tr>\n' +
+                    '        <td>' + list[i].getId() + '</td>\n' +
+                    '        <td>' + list[i].getTen() + '</td>\n' +
+                    '        <td>' + list[i].getLop() + '</td>\n' +
+                    '        <td>' + list[i].getEmail() + '</td>\n' +
+                    '        <td>' + list[i].getNgaysinh() + '</td>\n' +
+                    '        <td><button>Edit</button></td>\n'    +
+                    '        <td><button onclick="deleteEmployee('+i+')">Delete</button></td>\n' +
+                    '    </tr>';
+            }
+            tableString += '</table>';
+            document.getElementById("result").innerHTML = tableString;
+        }
+
+        function deleteLíst(index){
+
+        }
+
+    </script>
+</table>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeGym Student Management System</title>
+</head>
+<body>
+  <label for="id">ID:</label>
+  <input type="text" id="id" name="id" /><br>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" /><br>
+  <label for="class">Class:</label>
+  <input type="text" id="class" name="class" /><br>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" /><br>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday" /><br>
+  <label for="module">Module:</label>
+  <input type="text" id="module" name="module" /><br>
+  <button onclick="addStudent()">Thêmsinhvien</button>
+<div id="student-list"></div>
+
+<script>
+  class Student {
+    constructor(id, name, className, email, birthday, module) {
+      this.id = id;
+      this.name = name;
+      this.className = className;
+      this.email = email;
+      this.birthday = birthday;
+      this.module = module;
+    }
+  }
+
+  let studentList = [];
+
+  function display(list) {
+    let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '   <tr>\n' +
+            '       <th>#</th>\n' +
+            '       <th>ID</th>\n' +
+            '       <th>Name</th>\n' +
+            '       <th>Class</th>\n' +
+            '       <th>Email</th>\n' +
+            '       <th>Birthday</th>\n' +
+            '       <th>Module</th>\n' +
+            '       <th></th>\n' +
+            '       <th></th>\n' +
+            '   </tr>';
+
+    for (let i = 0; i < list.length; i++) {
+      let student = list[i];
+      tableString += '   <tr>\n' +
+              '       <td>' + (i + 1) + '</td>\n' +
+              '       <td>' + student.id + '</td>\n' +
+              '       <td>' + student.name + '</td>\n' +
+              '       <td>' + student.className + '</td>\n' +
+              '       <td>' + student.email + '</td>\n' +
+              '       <td>' + student.birthday + '</td>\n' +
+              '       <td>' + student.module + '</td>\n' +
+              '       <td><button onclick="editStudent(' + i + ')">Sửa Thông Tin</button></td>\n' +
+              '       <td><button onclick="deleteStudent(' + i + ')">Xoá</button></td>\n' +
+              '   </tr>';
+    }
+
+    tableString += '</table>';
+    document.getElementById("student-list").innerHTML = tableString;
+  }
+
+  function clearInputs() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("class").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("birthday").value = "";
+    document.getElementById("module").value = "";
+  }
+
+  function addStudent() {
+    let id = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let className = document.getElementById("class").value;
+    let email = document.getElementById("email").value;
+    let birthday = document.getElementById("birthday").value;
+    let module = document.getElementById("module").value;
+
+    let newStudent = new Student(id, name, className, email, birthday, module);
+    studentList.push(newStudent);
+    if(id === "" || name === "" || className === "" || email === "" || birthday === "" || module === "") {
+      alert("Yêu Cầu nhập đầy đủ thông tin !!!");
+      return;
+  }
+    clearInputs();
+    display(studentList);
+  }
+
+  function editStudent(index) {
+    let student = studentList[index];
+
+    document.getElementById("id").value = student.id;
+    document.getElementById("name").value = student.name;
+    document.getElementById("class").value = student.className;
+    document.getElementById("email").value = student.email;
+    document.getElementById("birthday").value = student.birthday;
+    document.getElementById("module").value = student.module;
+
+    document.getElementById("addButton").style.display = "none";
+    document.getElementById("updateButton").style.display = "inline-block";
+    document.getElementById("updateButton").onclick = function() {
+      updateStudent(index);
+    };
+  }
+
+  function updateStudent(index) {
+    let student = studentList[index];
+
+    student.id = document.getElementById("id").value;
+    student.name = document.getElementById("name").value;
+    student.className = document.getElementById("class").value;
+    student.email = document.getElementById("email").value;
+    student.birthday = document.getElementById("birthday").value;
+    student.module = document.getElementById("module").value;
+
+    clearInputs();
+    document.getElementById("addButton").style.display = "block";
+    document.getElementById("updateButton").style.display = "none";
+    display(studentList);
+  }
+
+  function deleteStudent(index) {
+    if (confirm("Bạn có muốn xoá học sinh này không?")) {
+      studentList.splice(index, 1);
+      display(studentList);
+    }
+  }
+</script>
+</body>
+</html>

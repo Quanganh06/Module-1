@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function kiemTraSoNguyenTo(number) {
+    if(number < 2) {
+      return false;
+    }
+    for(let i = 2; i <= Math.sqrt(number); i++) {
+      if(number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function lietKeSoNguyenTo(matrix) {
+    const primes = [];
+    for(let i = 0; i < matrix.length; i++) {
+      for(let j = 0; j < matrix[i].length; j++) {
+        if(kiemTraSoNguyenTo(matrix[i][j])) {
+          primes.push(matrix[i][j]);
+        }
+      }
+    }
+    document.write(`Các số nguyên tố trong mảng là: ${primes}`);
+  }
+  const matrix = [
+    [0, 2, 3],
+    [4, 5, 6],
+    [7, 11, 9]
+  ];
+
+  lietKeSoNguyenTo(matrix);
+</script>
+</body>
+</html>

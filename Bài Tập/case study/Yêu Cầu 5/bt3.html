@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const n = parseInt(prompt("Nhập số lượng phần tử của mảng:"));
+  const numbers = [];
+  for(let i = 0; i < n; i++) {
+    const number = parseInt(prompt(`Nhập giá trị của phần tử thứ ${i + 1}`));
+    numbers.push(number);
+  }
+  const maxNumbers = Math.max(...numbers);
+  const minNumbers = Math.min(...numbers);
+  document.write("Giá trị lớn nhất là " +maxNumbers+ "<br/>");
+  document.write("Giá trị nhỏ nhất là " +minNumbers+ "<br/>");
+
+</script>
+</body>
+</html>

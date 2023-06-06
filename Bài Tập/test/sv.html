@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Định nghĩa đối tượng HocVien
+  function HocVien(hoTen, diem) {
+    this.hoTen = hoTen;
+    this.diem = diem;
+  }
+
+  // Khởi tạo danh sách học viên với một số học viên mẫu
+  const danhSachHocVien = [
+    new HocVien("Nguyễn Văn A", 8.5),
+    new HocVien("Trần Thị B", 7.0),
+    new HocVien("Lê Hoàng C", 9.0)
+  ];
+
+  // Hàm hiển thị danh sách học viên
+  function hienThiDanhSachHocVien() {
+    for(let i = 0; i < danhSachHocVien.length; i++) {
+      document.write(`Học viên ${i + 1}: ${danhSachHocVien[i].hoTen} - Điểm: ${danhSachHocVien[i].diem}`);
+    }
+  }
+
+  // Hàm thêm mới học viên
+  function themHocVien() {
+    const hoTen = prompt("Nhập họ tên của học viên:");
+    const diem = parseFloat(prompt("Nhập điểm của học viên:"));
+    const hocVienMoi = new HocVien(hoTen, diem);
+    danhSachHocVien.push(hocVienMoi);
+  }
+
+  // Hàm sửa thông tin học viên
+  function suaThongTinHocVien() {
+    const index = parseInt(prompt("Nhập số thứ tự của học viên cần sửa thông tin:"));
+    if(index >= 1 && index <= danhSachHocVien.length) {
+      const hoTenMoi = prompt("Nhập họ tên mới của học viên:");
+      const diemMoi = parseFloat(prompt("Nhập điểm mới của học viên:"));
+      danhSachHocVien[index - 1].hoTen = hoTenMoi;
+      danhSachHocVien[index - 1].diem = diemMoi;
+    }
+    else {
+      alert("Số thứ tự không hợp lệ");
+    }
+  }
+
+  // Hàm xóa học viên
+  function xoaHocVien() {
+    const index = parseInt(prompt("Nhập số thứ tự của học viên cần xóa:"));
+    if(index >= 1 && index <= danhSachHocVien.length) {
+      danhSachHocVien.splice(index - 1, 1);
+    }
+    else {
+      alert("Số thứ tự không hợp lệ");
+    }
+  }
+
+  // Hiển thị danh sách học viên ban đầu
+  hienThiDanhSachHocVien();
+
+  // Thực hiện vòng lặp cho đến khi người dùng chọn thoát
+  let choice;
+  do {
+    choice = parseInt(prompt("Chọn chức năng:\n1. Hiển thị danh sách học viên\n2. Thêm mới học viên\n3. Sửa thông tin học viên\n4. Xóa học viên\n5. Thoát"));
+    switch(choice) {
+      case 1:
+        hienThiDanhSachHocVien();
+        break;
+      case 2:
+        themHocVien();
+        break;
+      case 3:
+        suaThongTinHocVien();
+        break;
+      case 4:
+        xoaHocVien();
+        break;
+      case 5:
+        alert("Đã thoát");
+        break;
+      default:
+        alert("Chọn sai chức năng");
+        break;
+    }
+  } while(choice !== 5);
+
+</script>
+</body>
+</html>

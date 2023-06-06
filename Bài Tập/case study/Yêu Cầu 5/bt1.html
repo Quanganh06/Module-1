@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function tinhTong(m, n, matrix){
+    let tong = 0;
+    for (let i=0; i<m; i++){
+      for (let j=0; j<n; j++){
+        if(matrix[i][j] % 2 === 0){
+          tong += matrix[i][j];
+        }
+      }
+    }
+    document.write(`Tổng các số chẵn trong ma trận là: ${tong}`);
+  }
+
+  let m = +prompt("Nhập số hàng của ma trận: ");
+  let n = +prompt("Nhập số cột của ma trận: ");
+  let matrix = [];
+  for(let i = 0; i < m; i++) {
+    matrix.push([]);
+    for(let j = 0; j < n; j++) {
+      matrix[i].push(+prompt(`Nhập giá trị phần tử ở hàng ${i + 1}, cột ${j + 1}:`));
+    }
+  }
+  tinhTong(m, n, matrix);
+
+</script>
+</body>
+</html>
