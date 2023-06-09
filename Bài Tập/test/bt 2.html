@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+
+  function characterCount(sl) {
+    let demkitu = {};
+    for (let i = 0; i < sl.length; i++) {
+      let kitu = sl[i].toLowerCase();
+      if (kitu.trim() !== " ") {
+        if (demkitu[kitu] === undefined) {
+          demkitu[kitu] = 1;
+        } else {
+          demkitu[kitu]++;
+        }
+      }
+    }
+    return Object.keys(demkitu).length;
+  }
+
+  let chuoi =["LequangAnh"]
+  document.write(characterCount(chuoi));
+
+</script>
+</body>
+</html>

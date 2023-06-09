@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone</title>
+</head>
+<body>
+<label for="id">ID:</label>
+<input type="text" id="id" name="id"/><br>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name"/><br>
+<label for="brand">Brand:</label>
+<input type="text" id="brand" name="Brand"/><br>
+<label for="gia">giadt:</label>
+<input type="text" id="gia" name="giadt"/><br>
+<button onclick="addPhone()">Thêmphone</button>
+<div id="phone-list"></div>
+
+<script>
+    class Phone {
+        constructor(id, name, brand, giadt) {
+            this.id = id;
+            this.name = name;
+            this.brand = brand;
+            this.giadt = giadt;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName() {
+            this.name = name;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId() {
+            this.id = id;
+        }
+
+        getBrand() {
+            return this.brand;
+        }
+
+        setBrand() {
+            this.brand = brand;
+        }
+
+        getGiadt() {
+            return this.giadt;
+        }
+
+        setGiadt() {
+            this.giadt = giadt;
+        }
+    }
+
+    let PhoneList = [];
+
+    function display(list) {
+        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '   <tr>\n' +
+            '       <th>ID</th>\n' +
+            '       <th>Name</th>\n' +
+            '       <th>Brand</th>\n' +
+            '       <th>Giadt</th>\n' +
+            '       <th></th>\n' +
+            '       <th></th>\n' +
+            '   </tr>';
+
+        for (let i = 0; i < list.length; i++) {
+            let phone = list[i];
+            tableString += '   <tr>\n' +
+                '       <td>' + (i + 1) + '</td>\n' +
+                '       <td>' + phone.id + '</td>\n' +
+                '       <td>' + phone.name + '</td>\n' +
+                '       <td>' + phone.brand + '</td>\n' +
+                '       <td>' + phone.giadt + '</td>\n' +
+                '   </tr>';
+        }
+
+        tableString += '</table>';
+        document.getElementById("phone-list").innerHTML = tableString;
+    }
+
+    function clearInputs() {
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("brand").value = "";
+        document.getElementById("giadt").value = "";
+    }
+
+    function addPhone() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let brand = document.getElementById("brand").value;
+        let giadt = document.getElementById("giadt").value;
+
+        let newPhone = new Phone(id, name, brand, giadt);
+        PhoneList.push(newPhone);
+        if (id === "" || name === "" || brand === "" || giadt === "") {
+            alert("Yêu Cầu nhập đầy đủ thông tin !!!");
+            return;
+        }
+        clearInputs();
+        display(PhoneList);
+    }
+
+</script>
+</body>
+</html>
+

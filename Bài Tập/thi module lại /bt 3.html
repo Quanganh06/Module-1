@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone List</title>
+</head>
+<body>
+<h3> Quản Lí Sách</h3>
+<div>
+    <label for="id-input">Mã Số Sách:</label>
+    <input type="text" id="id-input"/><br>
+    <label for="name-input">Tên Sách:</label>
+    <input type="text" id="name-input"/><br>
+    <label for="year-input">Năm Xuất Bản:</label>
+    <input type="text" id="year-input"/><br>
+    <label for="number-input">Số Quyển:</label>
+    <input type="text" id="number-input"/><br>
+    <label for="health-input">Tình Trạng:</label>
+    <input type="text" id="health-input"/><br>
+    <button onclick="addBook()">Thêm vào danh sách</button>
+</div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Mã Số Sách</th>
+        <th>Tên Sách</th>
+        <th>Năm Xuất Bản</th>
+        <th>Số Quyển</th>
+        <th>Tình Trạng</th>
+    </tr>
+    </thead>
+    <tbody id="book-table-body">
+    </tbody>
+</table>
+<script>
+    class book {
+        constructor(id, name, year, number, health) {
+            this.id = id;
+            this.name = name;
+            this.year = year;
+            this.number = number;
+            this.health = health;
+        }
+
+        get id() {
+            return this._id;
+        }
+
+        set id(id) {
+            this._id = id;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(newName) {
+            this._name = newName;
+        }
+
+        get year() {
+            return this._year;
+        }
+
+        set year(year) {
+            this._year = year;
+        }
+
+        get number() {
+            return this._number;
+        }
+
+        set number(number) {
+            this._number = number;
+        }
+
+        get health() {
+            return this._health;
+        }
+
+        set health(health) {
+            this._health = health;
+        }
+    }
+
+    const bookList = [];
+
+    function addBook() {
+        const id = document.getElementById("id-input").value;
+        const name = document.getElementById("name-input").value;
+        const year = document.getElementById("year-input").value;
+        const number = document.getElementById("number-input").value;
+        const health = document.getElementById("health-input").value;
+
+        if (!id || !name || !year || !number || !health) {
+            alert("Vui lòng điền đầy đủ thông tin để thêm một sách vào danh sách!");
+            return;
+        }
+
+        const newBook = new book(id, name, year, number, health);
+        bookList.push(newBook);
+        displayBookList(bookList);
+        clearInputs();
+    }
+
+    function clearInputs() {
+        document.getElementById("id-input").value = "";
+        document.getElementById("name-input").value = "";
+        document.getElementById("year-input").value = "";
+        document.getElementById("number-input").value = "";
+        document.getElementById("health-input").value = "";
+    }
+
+    function displayBookList(list) {
+        const tableRows = list.map(book => {
+            return `<tr>
+                        <td>${book.id}</td>
+                        <td>${book.name}</td>
+                        <td>${book.year}</td>
+                        <td>${book.number}</td>
+                        <td>${book.health}</td>
+                    </tr>`;
+        }).join("");
+        document.getElementById("book-table-body").innerHTML = tableRows;
+    }
+</script>
+</body>
+</html>

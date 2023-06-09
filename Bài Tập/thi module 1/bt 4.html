@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone List</title>
+</head>
+<body>
+<div>
+    <label for="id-input">Mã Số Sách:</label>
+    <input type="text" id="id-input"/><br>
+    <label for="name-input">Tên Sách:</label>
+    <input type="text" id="name-input"/><br>
+    <label for="year-input">Năm Suất Bản:</label>
+    <input type="text" id="year-input"/><br>
+    <label for="number-input">Số Quyển:</label>
+    <input type="text" id="number-input"/><br>
+    <label for="yes,no-input">Tình Trạng:</label>
+    <input type="text" id="yes,no-input"/><br>
+    <button onclick="addBook()">Thêm vào danh sách</button>
+</div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Mã Số Sách</th>
+        <th>Tên Sách</th>
+        <th>Năm Xuất Bản</th>
+        <th>Tình Trạng</th>
+    </tr>
+    </thead>
+    <tbody id="book-table-body">
+    </tbody>
+</table>
+</div>
+<script>
+    class Book {
+        constructor(id, name, year, number, health) {
+            this.id = Id;
+            this.name = name;
+            this.year = years;
+            this.number = numbers;
+            this.health = health;
+        }
+
+        get id() {
+            return this._id;
+        }
+
+        set id(Id) {
+            this.id = Id;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(newName) {
+            this._name = newName;
+        }
+
+        get year() {
+            return this.year;
+        }
+
+        set year(years) {
+            this.year = years;
+        }
+
+        get number() {
+            return this.number;
+        }
+
+        set number(numbers) {
+            this.number = numbers;
+        }
+
+        get health() {
+            return this.health;
+        }
+
+        set health(health) {
+            this.health = health;
+        }
+    }
+
+    const bookList = [];
+
+    function addBook() {
+        const id = document.getElementById("id-input").value;
+        const name = document.getElementById("name-input").value;
+        const year = document.getElementById("year-input").value;
+        const number = document.getElementById("number-input").value;
+        const health = document.getElementById("health-input").value;
+
+        if (!id || !name || !year || !number || !health) {
+            alert("Vui lòng điền đầy đủ thông tin để thêm một điện thoại vào danh sách!");
+            return;
+        }
+
+        const newBook = new Book(id, name, year, number, health);
+        bookList.push(newBook);
+        displayBookList(bookList);
+        clearInputs();
+    }
+
+    function clearInputs() {
+        document.getElementById("id-input").value = "";
+        document.getElementById("name-input").value = "";
+        document.getElementById("year-input").value = "";
+        document.getElementById("number-input").value = "";
+        document.getElementById("health-input").value = "";
+    }
+
+    function displayBookList(list) {
+        const tableRows = list.map(book => {
+            return `<tr>
+                        <td>${book.id}</td>
+                        <td>${book.name}</td>
+                        <td>${book.year}</td>
+                        <td>${book.number}</td>
+                        <td>${book.health}</td>
+                    </tr>`;
+        }).join("");
+        document.getElementById("book-table-body").innerHTML = tableRows;
+    }
+</script>
+</body>
+</html>
+//

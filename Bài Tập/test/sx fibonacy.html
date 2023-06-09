@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function findFibonacciNumbers(arr) {
+    // Duyệt mảng và lọc các số Fibonacci vào một mảng mới
+    let fibonacciNumbers = arr.filter(function(number) {
+      let a = 1, b = 1;
+      while (b <= number) {
+        if (b === number) {
+          return true;
+        }
+        let temp = a + b;
+        a = b;
+        b = temp;
+      }
+      return false;
+    });
+
+    // Sắp xếp lại mảng các số Fibonacci theo thứ tự tăng dần
+    fibonacciNumbers.sort(function(a, b) {
+      return a - b;
+    });
+
+    return fibonacciNumbers;
+  }
+document.write(findFibonacciNumbers())
+</script>
+</body>
+</html>

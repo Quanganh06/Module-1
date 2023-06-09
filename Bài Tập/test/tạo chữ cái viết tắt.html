@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function createAbbreviation(str) {
+    // Kiểm tra nếu chuỗi chỉ có một từ
+    if (str.split(' ').length === 1) {
+      return 'Chuỗi này chỉ được tính chỉ có 1 từ';
+    }
+
+    // Tạo một mảng từ các từ trong chuỗi
+    let words = str.split(' ');
+
+    // Duyệt qua từng từ trong mảng và tạo viết tắt
+    let abbreviation = '';
+    for (let i = 0; i < words.length; i++) {
+      abbreviation += words[i][0].toUpperCase();
+    }
+
+    return abbreviation;
+  }
+document.write(createAbbreviation())
+</script>
+</body>
+</html>

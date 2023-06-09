@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số lượng phần tử (n<=50): ");
+
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        let value = +prompt(`Nhập giá trị cho phần tử thứ ${i}: `);
+        array.push(value);
+    }
+    document.write("Danh sách các phần tử là: " + array.join(", ") + "<br>");
+
+    let sum = 0;
+    let count = 0;
+
+    for (let i = 0; i < n.length; i += 2) {
+        if (n[i] % 2 !== 0) {
+            sum += n[i];
+            count++;
+        }
+    }
+
+    let average = (sum / count) ;
+    document.write("Trung bình cộng của các số lẻ ở vị trí chẵn là:", average);
+
+</script>
+</body>
+</html>

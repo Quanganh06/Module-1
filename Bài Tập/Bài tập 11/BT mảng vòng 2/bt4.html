@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt 4</title>
+</head>
+<body>
+<script>
+    function countWords(str) {
+        str = str.trim();
+        if (str === "") {
+            return 0;
+        }
+        let wordArray = str.split(" ");
+        return wordArray.length;
+    }
+
+    let string = "Đây là một chuỗi có năm từ";
+    let wordCount = countWords(string);
+    console.log("Số từ trong chuỗi là: " + wordCount);
+
+</script>
+</body>
+</html>

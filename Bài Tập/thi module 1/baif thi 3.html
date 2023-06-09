@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm kiểm tra số nguyên tố
+    function isPrime(num) {
+        // Trường hợp đặc biệt
+        if (num < 2) {
+            return false;
+        }
+        // Kiểm tra số nguyên tố
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Mảng ban đầu
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    // Tìm và hiển thị các số nguyên tố trong mảng
+    const primes = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (isPrime(arr[i])) {
+            primes.push(arr[i]);
+        }
+    }
+    document.write(`Các số nguyên tố trong mảng là: ${primes}`);
+
+</script>
+</body>
+</html>

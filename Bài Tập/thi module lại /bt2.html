@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+    function Capsothanthiet(num1,num2){
+        let sum1=0;
+        for (let i=1;i<num1;i++){
+            if (num1%i ===0){
+                sum1+=i;
+            }
+        }
+
+        let sum2=0;
+        for (let i=1;i<num2;i++){
+            if (num2%i ===0){
+                sum2+=i;
+            }
+        }
+
+        return (sum1===num1 && sum2===num2)
+    }
+
+    let num1=220;
+    let num2=284;
+    document.write(Capsothanthiet(num1,num2))
+</script>
+</body>
+</html>
